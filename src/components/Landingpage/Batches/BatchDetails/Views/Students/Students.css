@@ -1,0 +1,33 @@
+.student_header{
+        border-bottom: 2px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.join_req_button{
+    border-radius: 0;
+    border: 0;
+    background-color: transparent;
+    color:  rgb(49, 121, 228);
+    font-weight: 500;
+}
+.stu_div{
+    display: flex;
+    flex-direction: row;
+        justify-content: space-between;
+
+}
+.stu_h_button{
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    color: black;
+    /* justify-content: space-between; */
+}
+.option_button{
+        border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    color: black;
+}

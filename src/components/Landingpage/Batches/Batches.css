@@ -1,0 +1,65 @@
+.batches_num {
+  font-size: medium;
+}
+.batches_header {
+  border-bottom: 2px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.search_bar {
+  width: fit-content;
+  height: 30px;
+}
+.space_bar_wrapper {
+ 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.search_bar .inputbox {
+  background-color: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.row .batches_header .space_bar_wrapper .sort .nav_sort{
+  background-color: aliceblue;
+  
+}
+.sort{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: aliceblue;
+}
+.sort .sort_button:hover{
+background-color: white;
+}
+.button_new_batch{
+    border-radius: 0;
+}
+.add_batch_name{
+  display: flex;
+  flex-direction: column;
+}
+.modal_firstRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modal_firstRow .row .modal_input{
+      width: 80%;
+}
+.modal_secondRow .row .modal_input{
+      width: 40%;
+}
+.createBatch_button{
+  border-radius: 0;
+}
+/* .batches{
+  margin-top: 100px;
+} */

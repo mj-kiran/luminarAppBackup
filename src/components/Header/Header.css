@@ -1,0 +1,77 @@
+.navbar_headings {
+  font-size: smaller;
+  align-items: center;
+  color: grey;
+  display: flex;
+  flex-direction: row;
+}
+.nav-link:hover {
+  cursor: pointer;
+  background-color: rgba(58, 67, 64, 0.2);
+}
+.navbar .nav_button.active {
+  
+  background-color: rgba(58, 67, 64, 0.2);
+}
+.nav-link,
+.nav_button {
+  color: grey;
+}
+
+.navbar {
+  padding: 0px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.nav_button {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.header_icon {
+  color: grey;
+  margin-right: 8px;
+}
+.header_icon:hover {
+  cursor: pointer;
+}
+.luminar_logo {
+  width: 36px;
+}
+.icons_header {
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 980px) {
+  .navbar_headings {
+    font-size: 12px;
+  }
+  .luminar_logo {
+    width: 30px;
+  }
+  .MuiSvgIcon-root {
+    font-size: 23px;
+  }
+  .login_id {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 840px) {
+  .navbar_headings {
+    font-size: 10px;
+  }
+  .luminar_logo {
+    width: 30px;
+  }
+  .MuiSvgIcon-root {
+    font-size: 23px;
+  }
+  .login_id {
+    font-size: 13px;
+  }
+}

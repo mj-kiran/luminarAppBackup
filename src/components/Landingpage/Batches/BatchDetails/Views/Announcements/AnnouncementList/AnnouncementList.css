@@ -1,0 +1,27 @@
+.announce_option:hover{
+    
+    cursor: pointer;
+}
+.announce_body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.luminar_logob{
+    width: 50px;
+}
+.luminar_logo_area{
+margin-right: 10px;
+}
+
+.search_icon .search_i{
+    font-size: 18px;
+}
+.announce_option{
+    /* border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    color: black; */
+    justify-content: end;
+}

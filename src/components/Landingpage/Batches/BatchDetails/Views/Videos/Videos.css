@@ -1,0 +1,29 @@
+.video_secondRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.video_num{
+    color: grey;
+    font-size: 16px;
+}
+.sort{
+    color: grey;
+    background-color: transparent;
+    font-size: 15px;
+
+}
+.sort_div{
+    background-color: white;
+    padding: 10px;
+}
+.filter{
+    color: grey;
+    background-color: transparent;
+    font-size: 15px;
+
+}
+.filter_div{
+    background-color: white;
+    padding: 10px;
+}

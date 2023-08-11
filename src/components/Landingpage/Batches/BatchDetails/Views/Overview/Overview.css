@@ -1,0 +1,352 @@
+.card .card-body .demo_batch_title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.batch_edit_button {
+  border-radius: 0;
+  border: 0;
+  background-color: transparent;
+  color: black;
+}
+.batch_edit_button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+.batch_remove_button {
+  border-radius: 0;
+  border: 0;
+  background-color: transparent;
+  color: black;
+}
+.batch_remove_button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+.start_date_icon {
+  color: grey;
+}
+.start_date_section {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+  flex: 0.4;
+}
+.start_label_firstrow {
+  color: grey;
+  font-size: medium;
+}
+.start_label_secondrow {
+  font-size: medium;
+}
+.start_date-labels {
+  display: flex;
+  flex-direction: column;
+}
+.start_date_icon{
+    margin-right: 10px;
+}
+
+.demo_Batch_firstRow,
+.demo_Batch_secondrow {
+  display: flex;
+  flex-direction: row;
+}
+.add_course {
+  border-radius: 0;
+  border: 0;
+  background-color: transparent;
+  color: rgb(49, 121, 228);
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+.add_course:hover{
+cursor: pointer;
+background:transparent;
+  color: rgb(49, 121, 228);
+
+}
+
+.demo_batch_timings {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.add_batch_timing .batch_timings_add_button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.batch_timings_add_button {
+  border-radius: 0;
+  border: 0;
+  background-color: transparent;
+  color: black;
+}
+.batch_timings_add_button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+.day_buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.day_button {
+  border-radius: 0;
+  border: 0;
+  background-color: transparent;
+  color: black;
+}
+.day_button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  /* border: 1 1 1 1; */
+}
+
+.demo_Batch_timings_firstRow {
+  display: flex;
+  flex-direction: column;
+}
+.live_classes_card_header {
+  color: grey;
+}
+
+.right_part_first_row .card .card-body .card-text .liveclass_text {
+  color: black;
+}
+.Go_live_button {
+  border-radius: 0;
+  border: 1;
+  border-color: gray;
+  background-color: transparent;
+  color: black;
+  width: 100%;
+}
+.Go_live_button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 1;
+  border-color: gray;
+}
+.zoom_classes_card_header {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+  color: grey;
+}
+.zoom_app{
+    margin-right: 10px;
+}
+.Start_class_button{
+    border-radius: 0;
+  border: 1;
+  border-color: gray;
+  background-color: transparent;
+  color: rgb(49, 121, 228);
+  width: 100%;
+}
+.Start_class_button:hover{
+    cursor: pointer;
+  background-color: white;
+  color: rgb(49, 121, 228);
+  border: 1;
+  border-color: gray;
+}
+.right_part_second_row .zoomclass_text{
+  color: black;
+}
+.announcement_card_header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.create_announce_button{
+  border-radius: 0;
+  border: 1;
+  border-color: gray;
+  background-color: transparent;
+  color: black;
+}
+.create_announce_button:hover{
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 1;
+  border-color: gray;
+}
+.students_header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.students_add_button{
+  border-radius: 0;
+  border: 1;
+  border-color: gray;
+  background-color: transparent;
+  color: black;
+}
+.students_add_button:hover{
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 1;
+  border-color: gray;
+}
+.student_info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.faculity_header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.faculty_add_button{
+  border-radius: 0;
+  border: 1;
+  border-color: gray;
+  background-color: transparent;
+  color: black;
+}
+.faculty_add_button:hover{
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 1;
+  border-color: gray;
+}
+.modal-content .modal_addcircle{
+  font-size: 80px;
+  color: rgb(41, 143, 245);
+ 
+}
+.add_manually{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal_c{
+  background-color: transparent;
+  border-radius: 0;
+  border: 0;
+  width: 100%;
+  color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal_c:hover{
+  background-color: transparent;
+  border-radius: 0;
+  border: 0;
+  width: 100%;
+  color: grey;
+  
+}
+.modalD_firstRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.modalD_secondRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.add_e_button{
+  background-color: transparent;
+  color: grey;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  border-radius: 0;
+}
+.add_e_button:hover{
+  background-color: transparent;
+  color: grey;
+}
+
+.modalD_thirdRow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.add_e{
+  color: rgb(49, 121, 228);
+  margin-right: 10px;
+}
+.ma_field{
+  color: grey;
+}
+.verify{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+.verify_button{
+  border-radius: 0;
+}
+.day_button{
+  padding: 10px;
+}
+
+@media screen and (max-width:850px) {
+  .day_button{
+  padding: 6px;
+}
+}
+@media screen and (min-width: 820px)  and (max-width:890px) {
+  .day_button{
+  padding: 8px;
+}
+}
+@media screen and (min-width: 890px) and (max-width: 991px) {
+  .day_button{
+  padding: 12px;
+}
+}
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+  .day_button{
+  padding: 4px;
+  font-size: 10px;
+}
+}
+@media screen and (min-width: 1025px) and (max-width: 1111px) {
+  .day_button{
+  padding: 6px;
+  font-size: 10px;
+}
+}
+@media screen and (min-width: 1111px) and (max-width: 1200px) {
+  .day_button{
+      padding: 6px;
+    font-size: 11px;
+}
+}
+@media screen and (min-width: 1200px) and (max-width: 1350px) {
+  .day_button{
+      padding: 6px;
+    font-size: 12.5px;
+}
+}

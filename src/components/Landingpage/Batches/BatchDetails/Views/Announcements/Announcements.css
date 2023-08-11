@@ -1,0 +1,20 @@
+.announce_header{
+        border-bottom: 2px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.announ{
+    font-size: 20px;
+}
+.announce_modal_body{
+      display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.announce_area{
+    border: none;
+    outline: none;
+    box-shadow: none;
+}

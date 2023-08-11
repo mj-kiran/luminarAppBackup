@@ -1,0 +1,19 @@
+.videos_list{
+    background-color: white;
+}
+.videos_body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.folder_div{
+    margin-right: 10px;
+}
+.videos_body .folder_icon{
+    color: #eda70ad1;
+    font-size: 70px;
+}
+.videos_list:hover{
+transform: scale(1.03);
+cursor: pointer;
+}

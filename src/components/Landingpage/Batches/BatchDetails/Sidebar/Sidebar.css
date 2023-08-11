@@ -1,0 +1,56 @@
+.sidenav_button{
+width: 100%;
+    /* border: 0; */
+    border-bottom: 0;
+    border-left: 0;
+    border-top: 0;
+    border-radius: 0;
+    border-right: 0;
+    color: grey;
+    background-color: transparent;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: 15px 15px 15px 15px;
+    margin: 5px 10px 5px 10px;
+    text-decoration: none;
+    
+}
+.sidenav_button:hover{
+
+    /* color: rgb(49, 121, 228);
+    background-color: transparent; */
+    
+     transform: scale(1.3);
+    
+}
+.sidenav_button.active{
+     transform: scale(1.2);
+    color: rgb(49, 121, 228);
+    background-color: transparent;
+    border-right: 1px;
+    border-bottom: 0;
+    border-left: 0;
+    border-top: 0;
+    border-radius: 0;
+    border-right: 1;
+}
+.button_row .sidenav_button:active{
+
+    color: rgb(49, 121, 228);
+    background-color: transparent;
+    
+    
+}
+.react_icons{
+    font-size: 25px;
+}
+.navigations_bar{
+    position: fixed;
+}
+.buttons_navigation{
+    margin-right: 30px;
+}
+@media screen and(max-width:1024px) {
+    
+}
