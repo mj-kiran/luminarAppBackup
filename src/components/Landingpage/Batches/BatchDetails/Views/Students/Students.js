@@ -10,13 +10,10 @@ import {
   Row,
 } from "react-bootstrap";
 import SearchIcon from "@mui/icons-material/Search";
-import AddIcon from "@mui/icons-material/Add";
-import { Avatar } from "@mui/material";
 import AddCircleOutlineRoundedIcon from "@mui/icons-material/AddCircleOutlineRounded";
 import SecurityUpdateOutlinedIcon from "@mui/icons-material/SecurityUpdateOutlined";
 import CloudUploadOutlinedIcon from "@mui/icons-material/CloudUploadOutlined";
 import AddCircleOutlinedIcon from "@mui/icons-material/AddCircleOutlined";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { Outlet, useNavigate } from "react-router-dom";
 
 function Students() {
@@ -150,77 +147,67 @@ function Students() {
                   >
                     <Modal.Header closeButton></Modal.Header>
                     <Modal.Body className="">
-                      {/* modal first row */}
-                      <Row>
-                        <div className="modalD_firstRow">
-                          {/* add Students name */}
-                          <div className="add_student_name">
-                            <Form>
-                              <Form.Group
-                                as={Row}
-                                className="mb-3"
-                                controlId="formPlaintextPassword"
-                              >
-                                <Form.Label sm="2">Student Name </Form.Label>
-                                <div sm="10">
-                                  <Form.Control
-                                    className="modal_input"
-                                    type="text"
-                                    placeholder="Enter Student Name"
-                                  />
-                                </div>
-                              </Form.Group>
-                            </Form>
-                          </div>
-                          {/* ------------------------------------------------------- */}
-                          {/* add mobile number */}
-                          <div className="add_mobilenum">
-                            <Form>
-                              <Form.Group
-                                as={Col}
-                                className="mb-3"
-                                controlId="formPlaintextPassword"
-                              >
-                                <Form.Label sm="2">Mobile Number*</Form.Label>
-                                <div sm="10">
-                                  <Form.Control
-                                    className="modal_input"
-                                    type="text"
-                                    placeholder="Enter Student Number"
-                                  />
-                                </div>
-                              </Form.Group>
-                            </Form>
-                          </div>
-                          {/* ----------------------------------------------- */}
-                          {/* add email */}
-                          <div className="add_stu_email">
-                            <Form>
-                              <Form.Group
-                                as={Row}
-                                className="mb-3"
-                                controlId="formPlaintextPassword"
-                              >
-                                <Form.Label sm="2">Email</Form.Label>
-                                <div sm="10">
-                                  <Form.Control
-                                    className="modal_input"
-                                    type="text"
-                                    placeholder="Enter Student Email"
-                                  />
-                                </div>
-                              </Form.Group>
-                            </Form>
-                          </div>
-                        </div>
-                      </Row>
-                      {/* ------------------------------------------------------------------------------ */}
-                      {/* second row */}
+                      <Form>
+                        {/* modal first row */}
+                        <Row>
+                          <Col>
+                            {/* add Students name */}
+                            <Form.Group
+                              as={Row}
+                              className="mb-3"
+                              controlId="formPlaintextPassword"
+                            >
+                              <Form.Label sm="2">Student Name </Form.Label>
+                              <div sm="10">
+                                <Form.Control
+                                  className="modal_input"
+                                  type="text"
+                                  placeholder="Enter Student Name"
+                                />
+                              </div>
+                            </Form.Group>
+                          </Col>
+                          <Col>
+                            {/* add mobile number */}
+                            <Form.Group
+                              as={Col}
+                              className="mb-3"
+                              controlId="formPlaintextPassword"
+                            >
+                              <Form.Label sm="2">Mobile Number*</Form.Label>
+                              <div sm="10">
+                                <Form.Control
+                                  className="modal_input"
+                                  type="text"
+                                  placeholder="Enter Student Number"
+                                />
+                              </div>
+                            </Form.Group>
+                          </Col>
+                          <Col>
+                            {/* add email */}
+                            <Form.Group
+                              as={Row}
+                              className="mb-3"
+                              controlId="formPlaintextPassword"
+                            >
+                              <Form.Label sm="2">Email</Form.Label>
+                              <div sm="10">
+                                <Form.Control
+                                  className="modal_input"
+                                  type="text"
+                                  placeholder="Enter Student Email"
+                                />
+                              </div>
+                            </Form.Group>
+                          </Col>
+                        </Row>
+                        {/* ------------------------------------------------------------------------------ */}
 
-                      <div className="modalD_secondRow">
-                        {/* add parent name */}
-                        <div className="addparent_name">
-                          <Form>
+                        {/* second row */}
+                        <Row>
+                          <Col>
+                            {/* add parent name */}
                             <Form.Group
                               as={Row}
                               className="mb-3"
@@ -235,12 +222,9 @@ function Students() {
                                 />
                               </div>
                             </Form.Group>
-                          </Form>
-                        </div>
-                        {/* ------------------------------------------------------- */}
-                        {/* add mobile number */}
-                        <div className="add_mobilenum">
-                          <Form>
+                          </Col>
+                          <Col>
+                            {/* add mobile number */}
                             <Form.Group
                               as={Col}
                               className="mb-3"
@@ -255,12 +239,9 @@ function Students() {
                                 />
                               </div>
                             </Form.Group>
-                          </Form>
-                        </div>
-                        {/* ----------------------------------------------- */}
-                        {/* add email */}
-                        <div className="add_parent_email">
-                          <Form>
+                          </Col>
+                          <Col>
+                            {/* add email */}
                             <Form.Group
                               as={Row}
                               className="mb-3"
@@ -275,10 +256,9 @@ function Students() {
                                 />
                               </div>
                             </Form.Group>
-                          </Form>
-                        </div>
-                      </div>
-                      {/* --------------------------------------------second modal 3rd row from here--------------------------------------- */}
+                          </Col>
+                        </Row>
+                      </Form>
 
                       <div className="modalD_thirdRow">
                         <div className="add_extra_student">

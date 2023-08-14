@@ -63,3 +63,8 @@ background-color: white;
 /* .batches{
   margin-top: 100px;
 } */
+.bactchlist:hover{
+  
+  transition: scale(1.1);
+
+}

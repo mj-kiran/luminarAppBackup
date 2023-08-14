@@ -9,6 +9,7 @@ import {
   Modal,
   Row,
 } from "react-bootstrap";
+import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import TagIcon from "@mui/icons-material/Tag";
@@ -20,10 +21,11 @@ import SecurityUpdateOutlinedIcon from "@mui/icons-material/SecurityUpdateOutlin
 import CloudUploadOutlinedIcon from "@mui/icons-material/CloudUploadOutlined";
 import AddCircleOutlinedIcon from "@mui/icons-material/AddCircleOutlined";
 function Overview() {
-  const [batch, setBatch] = useState(false)
+  const [batch, setBatch] = useState(false);
   const [faculty, setFaculty] = useState(false);
   const [student, setStudent] = useState(false);
   const [stShow, setStShow] = useState(false);
+  const [showremove, setShowremove] = useState(false);
   return (
     <Container>
       <Row className="my-5">
@@ -134,10 +136,20 @@ function Overview() {
 
                       {/* end */}
 
-                      <Button className="batch_remove_button">
-                        <MoreVertIcon />
+                      <Button
+                        className="batch_remove_button"
+                        onClick={() => setShowremove(!showremove)}
+                      >
+                        {/* <MoreVertIcon /> */}Remove
                       </Button>
                     </span>
+                    {/* {showremove && (
+                      <div className="remove">
+                        <div className="remove_icon">
+                          <RemoveCircleIcon />
+                        </div>
+                      </div>
+                    )} */}
                   </Card.Title>
 
                   <div className="demo_Batch_firstRow my-3">
@@ -481,9 +493,12 @@ function Overview() {
               <Card.Header className="faculity_header">
                 <span> Faculty( )</span>
                 <div className="add_faculty">
-                  <Button onClick={() => {
-                    setFaculty(true)
-                  }} className="faculty_add_button">
+                  <Button
+                    onClick={() => {
+                      setFaculty(true);
+                    }}
+                    className="faculty_add_button"
+                  >
                     <AddIcon />
                     <span> Add</span>
                   </Button>

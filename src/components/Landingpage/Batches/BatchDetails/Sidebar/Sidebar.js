@@ -11,15 +11,14 @@ import CampaignIcon from "@mui/icons-material/Campaign";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import { BiFilm } from "react-icons/bi";
 import { RiLiveLine } from "react-icons/ri";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function Navigations() {
   const [activeLink, setActiveLink] = useState("");
 
-  const handleLinkClick = ( link) => {
-    
+  const handleLinkClick = (link) => {
     setActiveLink(link);
   };
-const navigate=useNavigate()
+  const navigate = useNavigate();
   return (
     <Container fluid>
       <div className="navigations_bar">
@@ -41,7 +40,7 @@ const navigate=useNavigate()
             <span>Overview</span>
           </Button>
 
-          <Button
+          {/* <Button
             className={
               activeLink === "attendance"
                 ? "sidenav_button active"
@@ -56,7 +55,7 @@ const navigate=useNavigate()
               <DateRangeIcon />
             </div>
             <span>Attendance</span>
-          </Button>
+          </Button> */}
 
           <Button
             className={
@@ -74,7 +73,7 @@ const navigate=useNavigate()
             </div>
             <span>Students</span>
           </Button>
-
+          {/* 
           <Button
             className={
               activeLink === "assignments"
@@ -90,7 +89,7 @@ const navigate=useNavigate()
               <BorderColorIcon />
             </div>
             <span>Assignments</span>
-          </Button>
+          </Button> */}
 
           <Button
             className={
@@ -108,7 +107,7 @@ const navigate=useNavigate()
             </div>
             <span>Announcements</span>
           </Button>
-          <Button
+          {/* <Button
             className={
               activeLink === "tests"
                 ? "sidenav_button active"
@@ -123,7 +122,7 @@ const navigate=useNavigate()
               <WorkspacePremiumIcon />
             </div>
             <span>Tests</span>
-          </Button>
+          </Button> */}
           <Button
             className={
               activeLink === "videos"
@@ -157,7 +156,7 @@ const navigate=useNavigate()
             </div>
             <span>Live Classes</span>
           </Button>
-          <Button
+          {/* <Button
             className={
               activeLink === "studymaterials"
                 ? "sidenav_button active"
@@ -172,7 +171,7 @@ const navigate=useNavigate()
               <AutoStoriesIcon />
             </div>
             <span>Study materials</span>
-          </Button>
+          </Button> */}
           <Button
             className={
               activeLink === "settings"
@@ -183,7 +182,6 @@ const navigate=useNavigate()
               navigate("settings");
               handleLinkClick("settings");
             }}
-            
           >
             <div className="buttons_navigation">
               <SettingsIcon />

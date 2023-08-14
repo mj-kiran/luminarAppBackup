@@ -2,21 +2,51 @@
   "batches": [
     {
       "id": 1,
-      "name": " CLT FLUTTER ",
-      "code": "demo123",
-      "date": " 26-10-2022"
+      "batchName": " CLT FLUTTER ",
+      "batchCode": "demo123",
+      "startDate": " 26-10-2022"
     },
     {
       "id": 2,
-      "name": " demo 2 ",
-      "code": "demo123",
-      "date": " 18-10-2022"
+      "batchName": " demo 2 ",
+      "batchCode": "demo123",
+      "startDate": " 18-10-2022"
     },
     {
       "id": 3,
-      "name": " demo3 ",
-      "code": "demo123",
-      "date": " 02-10-2022"
+      "batchName": " demo3 ",
+      "batchCode": "demo123",
+      "startDate": " 02-10-2022"
+    },
+    {
+      "id": 4,
+      "batchName": " demo4",
+      "batchCode": "demo123",
+      "startDate": " 26-10-2022"
+    },
+    {
+      "id": 5,
+      "batchName": " demo5 ",
+      "batchCode": "demo123",
+      "startDate": " 18-10-2022"
+    },
+    {
+      "id": 6,
+      "batchName": " demo6 ",
+      "batchCode": "demo123",
+      "startDate": " 02-10-2022"
+    },
+    {
+      "id": 7,
+      "batchName": " demo5 ",
+      "batchCode": "demo123",
+      "startDate": " 18-10-2022"
+    },
+    {
+      "id": 8,
+      "batchName": " demo6 ",
+      "batchCode": "demo123",
+      "startDate": " 02-10-2022"
     }
   ]
 }

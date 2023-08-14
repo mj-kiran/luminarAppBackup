@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Videos.css";
-import { Button, Card, Col, Container, Form, ListGroup, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Modal, Row } from "react-bootstrap";
 import SearchIcon from "@mui/icons-material/Search";
 import VideoList from "./VideoList/VideoList";
 function Videos() {
+  const [video, setVideo] = useState(true);
   return (
     <>
       <Container className="batches my-5">
@@ -15,9 +16,65 @@ function Videos() {
               {/* new videos button */}
 
               <div className="new_videos_button">
-                <Button className="button_new_videos" variant="primary">
+                <Button
+                  className="button_new_videos"
+                  variant="primary"
+                  onClick={() => {
+                    setVideo(!video);
+                  }}
+                >
                   <span> Add</span>
                 </Button>
+                {/* modal for adding videos */}
+                <Modal
+                  size="lg"
+                  show={video}
+                  onHide={() => setVideo(false)}
+                  aria-labelledby="example-modal-sizes-title-lg"
+                >
+                  <Modal.Header closeButton>
+                    <Modal.Title id="example-modal-sizes-title-lg">
+                      Youtube Link
+                    </Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <Form>
+                      {/* add video title */}
+                      <Form.Group
+                        // as={Col}
+                        className="mb-3"
+                        controlId="formPlaintextPassword"
+                      >
+                        <Form.Label sm="2">Title</Form.Label>
+                        <div sm="10">
+                          <Form.Control
+                            className="modal_input"
+                            type="text"
+                            placeholder=""
+                          />
+                        </div>
+                      </Form.Group>
+
+                      <Form.Group
+                        as={Col}
+                        className="mb-3"
+                        controlId="formPlaintextPassword"
+                      >
+                        <Form.Label sm="2">Link</Form.Label>
+                        <div sm="10">
+                          <Form.Control
+                            className="modal_input"
+                            type="text"
+                            placeholder=""
+                          />
+                        </div>
+                      </Form.Group>
+                    </Form>
+                  </Modal.Body>
+                  <Modal.Footer className="footer_button">
+                    <Button variant="primary">Add Video</Button>
+                  </Modal.Footer>
+                </Modal>
               </div>
             </div>
           </Col>
@@ -84,7 +141,6 @@ function Videos() {
                       type="checkbox"
                       id={1}
                     />
-                    
                   </div>
                 </Form>
               </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Batches.css";
 import {
   Button,
@@ -12,19 +12,62 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import SortIcon from "@mui/icons-material/Sort";
 import Batchlist from "./Batchlist/Batchlist";
-// import { useDispatch } from "react-redux";
+// import axios from "axios";
+import { createBatch, getBatchlist } from "./Services/BatchServices";
 
 function Batches() {
-  const [batch, setBatch] = useState(false);
+  const [batchmodal, setBatchmodal] = useState(false);
   const [search, setSearch] = useState("");
-  // const dispatch=useDispatch()
+  const [batches, setBatches] = useState([]);
+  const [sortAsc, setSortAsc] = useState(true);
+  const [formData, setFormData] = useState({
+    batchName: "",
+    batchCode: "",
+    startDate: "",
+  });
+
+  useEffect(() => {
+    getBatchlist().then((batchList) => {
+      setBatches(batchList);
+    });
+    // console.log(batches,"batchlist");
+  }, []);
+  // sorting Ascending
+  const handleSortAscending = () => {
+    setSortAsc(true);
+    sortBatches(true);
+  };
+
+  const handleSortDescending = () => {
+    setSortAsc(false);
+    sortBatches(false);
+  };
+
+  const sortBatches = (ascending) => {
+    setBatches(
+      [...batches].sort((a, b) => {
+        const order = ascending ? 1 : -1;
+        return order * (a.id - b.id);
+      })
+    );
+  };
+  // create batch
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
   return (
     <>
       <Container className="batches my-5">
         <Row>
           <div className="batches_header">
             {/* batches number */}
-            <div className="batches_num">BATCHES(306)</div>
+            <div className="batches_num">BATCHES ({batches.length})</div>
 
             {/* search  bar */}
 
@@ -57,13 +100,15 @@ function Batches() {
                   title="Sort"
                   menuVariant="dark"
                 >
-                  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">
-                    Another action
+                  <NavDropdown.Item onClick={handleSortAscending}>
+                    Ascending
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">
+                  <NavDropdown.Item onClick={handleSortDescending}>
+                    Descending
+                  </NavDropdown.Item>
+                  {/* <NavDropdown.Item href="#action/3.3">
                     Something
-                  </NavDropdown.Item>
+                  </NavDropdown.Item> */}
                 </NavDropdown>
               </div>
             </div>
@@ -74,7 +119,7 @@ function Batches() {
               <Button
                 className="button_new_batch"
                 variant="primary"
-                onClick={() => setBatch(true)}
+                onClick={() => setBatchmodal(true)}
               >
                 <span> + Create Batch</span>
               </Button>
@@ -82,8 +127,8 @@ function Batches() {
 
               <Modal
                 size="lg"
-                show={batch}
-                onHide={() => setBatch(false)}
+                show={batchmodal}
+                onHide={() => setBatchmodal(false)}
                 aria-labelledby="example-modal-sizes-title-lg"
               >
                 <Modal.Header closeButton>
@@ -93,6 +138,7 @@ function Batches() {
                 </Modal.Header>
                 <Modal.Body>
                   <Form>
+                    {/* onSubmit={createBatch()} */}
                     <Row>
                       {/* modal first row */}
                       <Col lg={4} md={4}>
@@ -108,6 +154,9 @@ function Batches() {
                               className="modal_input"
                               type="text"
                               placeholder="e.g.Physics Batch"
+                              name="batchName"
+                              value={formData.batchName}
+                              onChange={handleInputChange}
                             />
                           </div>
                         </Form.Group>
@@ -127,6 +176,9 @@ function Batches() {
                               className="modal_input"
                               type="text"
                               placeholder="e.g.Phy123"
+                              name="batchCode"
+                              value={formData.batchCode}
+                              onChange={handleInputChange}
                             />
                           </div>
                         </Form.Group>
@@ -145,6 +197,9 @@ function Batches() {
                               className="modal_input"
                               type="date"
                               placeholder="e.g.Phy123"
+                              name="startDate"
+                              value={formData.startDate}
+                              onChange={handleInputChange}
                             />
                           </div>
                         </Form.Group>
@@ -156,7 +211,11 @@ function Batches() {
                   <Button
                     className="createBatch_button"
                     variant="primary"
-                    onClick={() => setBatch(false)}
+                    onClick={() => {
+                      // createBatch();
+                      console.log(formData);
+                      setBatchmodal(false);
+                    }}
                   >
                     Create Batch
                   </Button>
@@ -169,7 +228,23 @@ function Batches() {
         {/* batches list */}
 
         <Row className="my-5">
-          <Batchlist />
+          {batches
+            ? batches
+                .filter((item) => {
+                  if (search === "") {
+                    return item;
+                  } else if (
+                    item.batchName.toLowerCase().includes(search.toLowerCase())
+                  ) {
+                    return item;
+                  }
+                })
+                .map((item) => (
+                  <Col key={item.id} lg={3}>
+                    <Batchlist item={item} className="bactchlist" />
+                  </Col>
+                ))
+            : "error"}
         </Row>
       </Container>
     </>

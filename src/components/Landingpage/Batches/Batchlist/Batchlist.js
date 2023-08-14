@@ -3,14 +3,14 @@ import "./Batchlist.css";
 import { Button, Card } from "react-bootstrap";
 import AddIcon from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
-function Batchlist() {
+function Batchlist({ item }) {
   return (
     <>
-      <Link to={"/batchdetails/:id"}>
-        <Card style={{ width: "18rem" }}>
+      <Link to={`batchdetails/${item.id}`}>
+        <Card className="my-3 p-3 rounded batchlist">
           <Card.Body>
             <Card.Title>
-              <span>CLT Flutter Jul23</span>
+              <span>{item.batchName}</span>
             </Card.Title>
             <Card.Text>
               <span> No Course</span>

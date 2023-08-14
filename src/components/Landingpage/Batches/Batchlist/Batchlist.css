@@ -26,3 +26,6 @@
     align-items: center;
     justify-content: space-between;
 }
+.batchlist:hover{
+    transform: scale(1.1);
+}
