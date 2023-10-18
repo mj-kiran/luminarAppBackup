@@ -1,11 +1,15 @@
+import './Active.css'
 import { Avatar } from '@mui/material';
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Row } from 'react-bootstrap';
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import DeleteIcon from "@mui/icons-material/Delete";
+import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 
 function Active() {
+  const [option,setOption]=useState(false)
   return (
-    <div>
+    <>
       <Row className="students_list">
         <div className="student_info">
           <div className="student_avatar">
@@ -17,12 +21,28 @@ function Active() {
           <div className="student_mob">
             <span>919074834662</span>
           </div>
-          <Button className="option_button">
+          <Button
+            className="option_button"
+            onClick={() => {
+              setOption(!option);
+            }}
+          >
             <MoreVertIcon />
           </Button>
         </div>
       </Row>
-    </div>
+      {option && (
+        <div className="options p-1">
+          <div className="options_list p-1">
+            <DeleteIcon /> &nbsp; Remove from batch
+          </div>
+          <div className="options_list p-1">
+            <RemoveCircleOutlineIcon />
+            &nbsp; Make inactive in batch
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

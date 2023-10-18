@@ -23,11 +23,15 @@
     border-radius: 0;
     background-color: transparent;
     color: black;
-    /* justify-content: space-between; */
 }
 .option_button{
         border: 0;
     border-radius: 0;
     background-color: transparent;
     color: black;
+}
+.stu_h_button.active{
+    /* box-shadow: inset -367px 0 #ffffff ; */
+    transform: translateY(2px);
+    color:  rgb(49, 121, 228);
 }

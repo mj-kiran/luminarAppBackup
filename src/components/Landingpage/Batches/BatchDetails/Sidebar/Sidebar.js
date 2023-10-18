@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Sidebar.css";
 import { Button, Container } from "react-bootstrap";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
@@ -11,14 +11,22 @@ import CampaignIcon from "@mui/icons-material/Campaign";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import { BiFilm } from "react-icons/bi";
 import { RiLiveLine } from "react-icons/ri";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 function Navigations() {
   const [activeLink, setActiveLink] = useState("");
-
   const handleLinkClick = (link) => {
     setActiveLink(link);
+    localStorage.setItem("activeLink", link);
   };
+  
   const navigate = useNavigate();
+   useEffect(() => {
+    //  setActiveLink("overview");
+    const storedActiveLink = localStorage.getItem("activeLink");
+    setActiveLink(storedActiveLink || "overview");
+
+   }, []);
+ 
   return (
     <Container fluid>
       <div className="navigations_bar">

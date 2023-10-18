@@ -7,7 +7,7 @@ function Batchlist({ item }) {
   return (
     <>
       <Link to={`batchdetails/${item.id}`}>
-        <Card className="my-3 p-3 rounded batchlist">
+        <Card  className="my-3 p-3 rounded batchlist">
           <Card.Body>
             <Card.Title>
               <span>{item.batchName}</span>
@@ -24,7 +24,7 @@ function Batchlist({ item }) {
                   </span>
                 </Button>
               </div>
-              <div>
+              <div className="ms-2">
                 <span>Add students</span>
               </div>
             </div>

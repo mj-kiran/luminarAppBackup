@@ -20,6 +20,11 @@ function Students() {
   const navigate = useNavigate();
   const [lgShow, setLgShow] = useState(false);
   const [stShow, setStShow] = useState(false);
+  const [activeLink, setActiveLink] = useState("active");
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+  };
 
   return (
     <>
@@ -71,28 +76,39 @@ function Students() {
                 <div className="stu_div">
                   <Button
                     onClick={() => {
+                      handleLinkClick("active");
                       navigate("active");
                     }}
-                    className="stu_h_button"
+                    className={
+                      activeLink === "active"
+                        ? "stu_h_button active"
+                        : "stu_h_button"
+                    }
                   >
-                    Active ( )
+                    Active (10)
                   </Button>
+                  &nbsp;&nbsp;
                   <Button
                     onClick={() => {
+                      handleLinkClick("inactive");
                       navigate("inactive");
                     }}
-                    className="stu_h_button"
+                    className={
+                      activeLink === "inactive"
+                        ? "stu_h_button active"
+                        : "stu_h_button"
+                    }
                   >
-                    Inactive ( )
+                    Inactive (1)
                   </Button>
-                  <Button
+                   <Button
                     onClick={() => {
                       navigate("waitinglist");
                     }}
                     className="stu_h_button"
                   >
                     Waiting List ( )
-                  </Button>
+                  </Button> 
                 </div>
                 <div className="add_student">
                   <Button className="join_req_button">

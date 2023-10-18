@@ -358,8 +358,8 @@ sup {
   top: -0.5em;
 }
 a {
-  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
-  text-decoration: underline;
+  /* color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1)); */
+  text-decoration: none;
 }
 a:hover {
   --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
@@ -438,9 +438,9 @@ tr {
   border-style: solid;
   border-width: 0;
 }
-label {
+/* label {
   display: inline-block;
-}
+} */
 button {
   border-radius: 0;
 }
@@ -452,7 +452,7 @@ input,
 optgroup,
 select,
 textarea {
-  margin: 0;
+  /* margin: 0; */
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;

@@ -9,8 +9,6 @@ import {
   Modal,
   Row,
 } from "react-bootstrap";
-import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import TagIcon from "@mui/icons-material/Tag";
 import AddIcon from "@mui/icons-material/Add";
@@ -64,7 +62,7 @@ function Overview() {
                           <Form>
                             <Row>
                               {/* modal first row */}
-                              <Col lg={4} md={4}>
+                              <Col lg={5} md={4}>
                                 {/* add batch name */}
                                 <Form.Group
                                   // as={Col}
@@ -84,7 +82,7 @@ function Overview() {
                               <Col lg={1} md={1}></Col>
                               {/* add batch code */}
 
-                              <Col lg={4} md={4}>
+                              <Col lg={5} md={4}>
                                 <Form.Group
                                   as={Col}
                                   className="mb-3"
@@ -102,7 +100,7 @@ function Overview() {
                               </Col>
                             </Row>
                             <Row>
-                              <Col lg={6} md={4}>
+                              <Col lg={5} md={4}>
                                 <Form.Group
                                   as={Row}
                                   className="mb-3"
@@ -117,6 +115,31 @@ function Overview() {
                                       type="date"
                                       placeholder="e.g.Phy123"
                                     />
+                                  </div>
+                                </Form.Group>
+                              </Col>
+                              <Col lg={1} md={1}></Col>
+                              {/* add coursecode */}
+
+                              <Col lg={5} md={4}>
+                                <Form.Group
+                                  as={Col}
+                                  className="mb-3"
+                                  controlId="formPlaintextPassword"
+                                >
+                                  <Form.Label sm="2">Course</Form.Label>
+                                  <div sm="10">
+                                    <Form.Control
+                                      className="modal_input"
+                                      as="select"
+                                      name="courseName"
+                                      value=''
+                                     
+                                    >
+                                      <option value="">Select Course</option>
+                                      <option value="1">Flutter</option>
+                                      <option value="2">MERN STACK</option>
+                                    </Form.Control>
                                   </div>
                                 </Form.Group>
                               </Col>
@@ -138,7 +161,7 @@ function Overview() {
 
                       <Button
                         className="batch_remove_button"
-                        onClick={() => setShowremove(!showremove)}
+                        onClick={() => setShowremove(true)}
                       >
                         {/* <MoreVertIcon /> */}Remove
                       </Button>
@@ -150,6 +173,44 @@ function Overview() {
                         </div>
                       </div>
                     )} */}
+
+                    <Modal
+                      show={showremove}
+                      size="md"
+                      aria-labelledby="contained-modal-title-vcenter"
+                      centered
+                    >
+                      <Modal.Body className="remove_body ">
+                        <Row className="my-3 ms-2">
+                          <p>Are you sure to Remove this batch ????</p>
+                        </Row>
+
+                        <Row className="remove_buttons">
+                          <Col />
+                          <Col>
+                            <Button
+                              variant="secondary"
+                              onClick={() => setShowremove(false)}
+                            >
+                              Cancel
+                            </Button>
+                            &nbsp;
+                            <Button
+                              variant="danger"
+                              onClick={() => setShowremove(false)}
+                            >
+                              Remove
+                            </Button>
+                          </Col>
+                        </Row>
+                      </Modal.Body>
+                      {/* 
+                      <Modal.Footer>
+                        <Button onClick={() => setShowremove(false)}>
+                          Close
+                        </Button>
+                      </Modal.Footer> */}
+                    </Modal>
                   </Card.Title>
 
                   <div className="demo_Batch_firstRow my-3">
@@ -594,9 +655,15 @@ function Overview() {
               <Card.Body>
                 <Row className="faculty_list">
                   <div className="faculty_info">
-                    <div className="faculty_avatar"></div>
-                    <div className="faculty_name"></div>
-                    <div className="faculty_mob"></div>
+                    <div className="faculty_avatar">
+                      <Avatar>A</Avatar>
+                    </div>
+                    <div className="faculty_name">
+                      <span>Anand C B</span>
+                    </div>
+                    <div className="faculty_mob">
+                      <span>919074834662</span>
+                    </div>
                   </div>
                 </Row>
               </Card.Body>

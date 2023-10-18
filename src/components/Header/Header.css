@@ -12,6 +12,7 @@
 .navbar .nav_button.active {
   
   background-color: rgba(58, 67, 64, 0.2);
+  transform: translateY(2px);
 }
 .nav-link,
 .nav_button {
@@ -46,6 +47,12 @@
   align-items: center;
   justify-content: space-between;
 }
+.login_id:hover{
+    background-color: transparent;
+  }
+  .dropdown-toggle:hover{
+    background-color: transparent;
+  }
 
 @media screen and (max-width: 980px) {
   .navbar_headings {
@@ -73,5 +80,7 @@
   }
   .login_id {
     font-size: 13px;
+    
   }
+  
 }

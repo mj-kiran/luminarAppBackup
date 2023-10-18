@@ -1,7 +1,7 @@
-.batches_num {
+.courses_num {
   font-size: medium;
 }
-.batches_header {
+.courses_header {
   border-bottom: 2px;
   align-items: center;
   display: flex;
@@ -25,7 +25,7 @@
   border: none;
 }
 
-.row .batches_header .space_bar_wrapper .sort .nav_sort{
+.row .courses_header .space_bar_wrapper .sort .nav_sort{
   background-color: aliceblue;
   
 }
@@ -34,15 +34,15 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: aliceblue;
+    background-color: transparent;
 }
 .sort .sort_button:hover{
 background-color: transparent;
 }
-.button_new_batch{
+.button_new_course{
     border-radius: 0;
 }
-.add_batch_name{
+.add_course_name{
   display: flex;
   flex-direction: column;
 }
@@ -57,7 +57,7 @@ background-color: transparent;
 .modal_secondRow .row .modal_input{
       width: 40%;
 }
-.createBatch_button{
+.createCourse_button{
   border-radius: 0;
 }
 /* .batches{
@@ -66,5 +66,36 @@ background-color: transparent;
 .bactchlist:hover{
   
   transition: scale(1.1);
+  cursor: pointer;
 
+}
+.mod_del_button{
+  border: 0;
+  background-color: rgb(163, 158, 158);
+  color: black;
+  width: 10%;
+  justify-content: center;
+}
+.del_sec{
+  justify-content: end;
+}
+.course_foot{
+  justify-content: center;
+}
+.mod_add_button{
+  border: 0;
+  background-color: rgb(163, 158, 158);
+  color: black;
+  width: 20%;
+  justify-content: center;
+}
+.add_sec{
+  justify-content: end;
+}
+.subheadings{
+      font-size: 18px;
+    font-weight: 900;
+}
+.thumbnail:hover{
+cursor: pointer;
 }

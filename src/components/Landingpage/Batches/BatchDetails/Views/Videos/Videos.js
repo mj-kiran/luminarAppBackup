@@ -4,7 +4,7 @@ import { Button, Col, Container, Form, Modal, Row } from "react-bootstrap";
 import SearchIcon from "@mui/icons-material/Search";
 import VideoList from "./VideoList/VideoList";
 function Videos() {
-  const [video, setVideo] = useState(true);
+  const [video, setVideo] = useState(false);
   return (
     <>
       <Container className="batches my-5">
@@ -110,19 +110,19 @@ function Videos() {
           </Col>
           <Col lg={4}>
             <Row>
-              <span className="sort">SORT BY</span>
+              <span className="sortvideos">SORT BY</span>
               <div className="sort_div my-2">
                 <Form className="my-2">
                   <div className="mb-3">
                     <Form.Check
                       label="Recently Added"
-                      name="group1"
+                      name="sortgroup"
                       type="radio"
                       id={1}
                     />
                     <Form.Check
                       label="Name"
-                      name="group1"
+                      name="sortgroup"
                       type="radio"
                       id={2}
                     />
@@ -137,9 +137,9 @@ function Videos() {
                   <div className="mb-3">
                     <Form.Check
                       label="Uncategorized"
-                      name="group1"
+                      name="filtergroup"
                       type="checkbox"
-                      id={1}
+                      id={3}
                     />
                   </div>
                 </Form>

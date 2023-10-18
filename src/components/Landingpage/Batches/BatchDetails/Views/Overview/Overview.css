@@ -212,6 +212,12 @@ background:transparent;
   align-items: center;
   justify-content: space-between;
 }
+.faculty_info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
 .faculity_header{
   display: flex;
   flex-direction: row;
@@ -311,6 +317,9 @@ background:transparent;
   padding: 10px;
 }
 
+.remove_body{
+  align-items: center;
+}
 @media screen and (max-width:850px) {
   .day_button{
   padding: 6px;

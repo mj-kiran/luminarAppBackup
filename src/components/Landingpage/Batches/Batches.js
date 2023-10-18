@@ -24,12 +24,14 @@ function Batches() {
     batchName: "",
     batchCode: "",
     startDate: "",
+    courseName:""
   });
 
   useEffect(() => {
     getBatchlist().then((batchList) => {
       setBatches(batchList);
     });
+   localStorage.removeItem("activeLink");
     // console.log(batches,"batchlist");
   }, []);
   // sorting Ascending
@@ -141,7 +143,7 @@ function Batches() {
                     {/* onSubmit={createBatch()} */}
                     <Row>
                       {/* modal first row */}
-                      <Col lg={4} md={4}>
+                      <Col lg={5} md={4}>
                         {/* add batch name */}
                         <Form.Group
                           // as={Col}
@@ -164,7 +166,7 @@ function Batches() {
                       <Col lg={1} md={1}></Col>
                       {/* add batch code */}
 
-                      <Col lg={4} md={4}>
+                      <Col lg={5} md={4}>
                         <Form.Group
                           as={Col}
                           className="mb-3"
@@ -185,7 +187,7 @@ function Batches() {
                       </Col>
                     </Row>
                     <Row>
-                      <Col lg={6} md={4}>
+                      <Col lg={5} md={4}>
                         <Form.Group
                           as={Row}
                           className="mb-3"
@@ -196,11 +198,35 @@ function Batches() {
                             <Form.Control
                               className="modal_input"
                               type="date"
-                              placeholder="e.g.Phy123"
                               name="startDate"
                               value={formData.startDate}
                               onChange={handleInputChange}
                             />
+                          </div>
+                        </Form.Group>
+                      </Col>
+                      <Col lg={1} md={1}></Col>
+                      {/* add coursecode */}
+
+                      <Col lg={5} md={4}>
+                        <Form.Group
+                          as={Col}
+                          className="mb-3"
+                          controlId="formPlaintextPassword"
+                        >
+                          <Form.Label sm="2">Course</Form.Label>
+                          <div sm="10">
+                            <Form.Control
+                              className="modal_input"
+                              as="select"
+                              name="courseName"
+                              value={formData.courseName}
+                              onChange={handleInputChange}
+                            >
+                            <option value="">Select Course</option>
+                            <option value="1">Flutter</option>
+                              <option value="2">MERN STACK</option>
+                              </Form.Control>
                           </div>
                         </Form.Group>
                       </Col>
@@ -215,6 +241,13 @@ function Batches() {
                       // createBatch();
                       console.log(formData);
                       setBatchmodal(false);
+                      // Clear form fields
+                      setFormData({
+                        batchName: "",
+                        batchCode: "",
+                        startDate: "",
+                        courseName: "",
+                      });
                     }}
                   >
                     Create Batch
@@ -240,7 +273,7 @@ function Batches() {
                   }
                 })
                 .map((item) => (
-                  <Col key={item.id} lg={3}>
+                  <Col key={item.id} lg={3} md={4}>
                     <Batchlist item={item} className="bactchlist" />
                   </Col>
                 ))
