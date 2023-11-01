@@ -36,7 +36,7 @@ const location=useLocation()
             }
             onClick={() => {
               handleLinkClick("courses");
-              navigate("/");
+              navigate("/courses");
             }}
           >
             Courses

@@ -13,18 +13,21 @@ import SearchIcon from "@mui/icons-material/Search";
 import SortIcon from "@mui/icons-material/Sort";
 import Batchlist from "./Batchlist/Batchlist";
 // import axios from "axios";
-import { createBatch, getBatchlist } from "./Services/BatchServices";
+import { createBatch, getBatchlist } from "../../Services/BatchServices";
+import { useParams } from "react-router-dom";
 
 function Batches() {
   const [batchmodal, setBatchmodal] = useState(false);
   const [search, setSearch] = useState("");
   const [batches, setBatches] = useState([]);
   const [sortAsc, setSortAsc] = useState(true);
+  const { courseId } = useParams();
   const [formData, setFormData] = useState({
-    batchName: "",
-    batchCode: "",
-    startDate: "",
-    courseName:""
+    id: 0,
+    batch_name: "",
+    startdate: "",
+    time: "",
+    course: courseId,
   });
 
   useEffect(() => {
@@ -63,13 +66,37 @@ function Batches() {
       [name]: value,
     }));
   };
+  const handleFormSubmit = (event) => {
+    //  console.log(event);
+    //  event.preventDefault(); 
+
+     createBatch(formData) 
+       .then((response) => {
+          console.log("Batch created:", response);
+         setFormData({
+           id: 0,
+           batch_name: "",
+           startdate: "",
+           time: "",
+           course: courseId,
+         });
+ setBatchmodal(false);
+       })
+       .catch((error) => {
+        
+         console.error("Error creating batch:", error);
+       });
+   };
+
   return (
     <>
       <Container className="batches my-5">
         <Row>
           <div className="batches_header">
             {/* batches number */}
-            <div className="batches_num">BATCHES ({batches.length})</div>
+            <div className="batches_num">
+              BATCHES ({ batches &&batches.length !== 0 ? batches.length : "0"})
+            </div>
 
             {/* search  bar */}
 
@@ -139,8 +166,8 @@ function Batches() {
                   </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                  <Form>
-                    {/* onSubmit={createBatch()} */}
+                  <Form onSubmit={handleFormSubmit}>
+                    {/*  */}
                     <Row>
                       {/* modal first row */}
                       <Col lg={5} md={4}>
@@ -156,8 +183,8 @@ function Batches() {
                               className="modal_input"
                               type="text"
                               placeholder="e.g.Physics Batch"
-                              name="batchName"
-                              value={formData.batchName}
+                              name="batch_name"
+                              value={formData.batch_name}
                               onChange={handleInputChange}
                             />
                           </div>
@@ -172,14 +199,14 @@ function Batches() {
                           className="mb-3"
                           controlId="formPlaintextPassword"
                         >
-                          <Form.Label sm="2">Batch Code</Form.Label>
+                          <Form.Label sm="2">Time</Form.Label>
                           <div sm="10">
                             <Form.Control
                               className="modal_input"
                               type="text"
-                              placeholder="e.g.Phy123"
-                              name="batchCode"
-                              value={formData.batchCode}
+                              placeholder="11 am"
+                              name="time"
+                              value={formData.time}
                               onChange={handleInputChange}
                             />
                           </div>
@@ -198,8 +225,8 @@ function Batches() {
                             <Form.Control
                               className="modal_input"
                               type="date"
-                              name="startDate"
-                              value={formData.startDate}
+                              name="startdate"
+                              value={formData.startdate}
                               onChange={handleInputChange}
                             />
                           </div>
@@ -219,14 +246,19 @@ function Batches() {
                             <Form.Control
                               className="modal_input"
                               as="select"
-                              name="courseName"
-                              value={formData.courseName}
+                              name="course"
+                              value={formData.course}
                               onChange={handleInputChange}
                             >
-                            <option value="">Select Course</option>
-                            <option value="1">Flutter</option>
-                              <option value="2">MERN STACK</option>
-                              </Form.Control>
+                              <option value="">Select Course</option>
+                              <option value="1">Python</option>
+                              <option value="2">Flutter</option>
+                              <option value="3">Testing</option>
+                              <option value="4">DATA SCIENCE</option>
+                              <option value="5">MEA(R)N</option>
+                              <option value="6">Asp.Net</option>
+                              <option value="7">Java</option>
+                            </Form.Control>
                           </div>
                         </Form.Group>
                       </Col>
@@ -237,17 +269,21 @@ function Batches() {
                   <Button
                     className="createBatch_button"
                     variant="primary"
+                    type="submit"
                     onClick={() => {
-                      // createBatch();
-                      console.log(formData);
+                      // // Clear form fields
+                      // setFormData({
+                      //   id: 0,
+                      //   batch_name: "",
+                      //   startdate: "",
+                      //   time: "",
+                      //   course: courseId,
+                      // });
+                      // createBatch(formData);
+                      // console.log(formData);
+                      //
+                      handleFormSubmit();
                       setBatchmodal(false);
-                      // Clear form fields
-                      setFormData({
-                        batchName: "",
-                        batchCode: "",
-                        startDate: "",
-                        courseName: "",
-                      });
                     }}
                   >
                     Create Batch
@@ -267,7 +303,7 @@ function Batches() {
                   if (search === "") {
                     return item;
                   } else if (
-                    item.batchName.toLowerCase().includes(search.toLowerCase())
+                    item.batch_name.toLowerCase().includes(search.toLowerCase())
                   ) {
                     return item;
                   }
@@ -277,7 +313,7 @@ function Batches() {
                     <Batchlist item={item} className="bactchlist" />
                   </Col>
                 ))
-            : "error"}
+            : "No Batches Available"}
         </Row>
       </Container>
     </>

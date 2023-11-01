@@ -13,8 +13,8 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import SortIcon from "@mui/icons-material/Sort";
 import CourseList from "./CourseList/CourseList";
-// import axios from "axios";
-import {getCourses}from '../Batches/Services/CourseServices'
+import axios from "axios";
+import {getCourses}from '../../Services/CourseServices'
 
 function Courses() {
   const [coursemodal, setCoursemodal] = useState(false);
@@ -36,9 +36,9 @@ function Courses() {
 
   
   useEffect(() => {
-    // getCourses().then((Courses) => {
-    //   setCourses(Courses);
-    // });
+    getCourses().then((Courses) => {
+      setCourses(Courses);
+    });
     
     
   }, []);

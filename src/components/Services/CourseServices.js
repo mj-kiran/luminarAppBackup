@@ -1,16 +1,16 @@
 import axios from "axios";
 
-// export const getCourses = async () => {
-//   try {
-//     const response = await axios.get(`http://3.82.58.104:8000/api/student/courses/`);
-//     console.log(response.data.data, "data");
-//       return response.data.data
+export const getCourses = async () => {
+  try {
+    const response = await axios.get(`http://54.172.42.22/api/v1/courses/list/`);
+    console.log(response.data.data, "data");
+      return response.data.data
       
-//   } catch (error) {
-//      console.error("Error fetching courses:", error);
-//      throw error;
-//   }
-// };
+  } catch (error) {
+     console.error("Error fetching courses:", error);
+     throw error;
+  }
+};
 
 export const createCourse = async (formData) => {
   try {

@@ -87,25 +87,25 @@ function CourseList({ item }) {
       <Card className="my-3 p-3 rounded courselist">
         <Card.Body
           onClick={() => {
-            navigate("/batches/:id");
+            navigate(`/courses/${item.id}/batches`);
           }}
         >
           <Card.Title>
-            <span>{ item.title}</span>
+            <span>{item.title}</span>
           </Card.Title>
           <Card.Text>
             <div className="subheading"> Next Batch</div>
           </Card.Text>
           <Card.Text>
             <span> Calicut :</span>
-            <span> &nbsp; { item.calicut}</span>
+            <span> &nbsp; {item.calicut_date}</span>
           </Card.Text>
           <Card.Text>
             <span> Cochin :</span>
-            <span> &nbsp;{ item.cochin}</span>
+            <span> &nbsp;{item.cochin_date}</span>
           </Card.Text>
         </Card.Body>
-{/* -----------------update section----------------------- */}
+        {/* -----------------update section----------------------- */}
         <Row>
           <Col lg={4} md={2} />
           <Col>
@@ -125,7 +125,7 @@ function CourseList({ item }) {
             </Button>
           </Col>
         </Row>
-{/*--------------------------------- update course modal--------------------------------------------- */}
+        {/*--------------------------------- update course modal--------------------------------------------- */}
         <Modal
           size="lg"
           show={updateCoursemodal}

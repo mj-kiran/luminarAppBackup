@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./Videos.css";
-import { Button, Col, Container, Form, Modal, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Image, Modal, Row } from "react-bootstrap";
 import SearchIcon from "@mui/icons-material/Search";
 import VideoList from "./VideoList/VideoList";
 function Videos() {
   const [video, setVideo] = useState(false);
+  const fileRef = useRef(null);
+  const [file, setFile] = useState(undefined);
   return (
     <>
       <Container className="batches my-5">
@@ -40,12 +42,40 @@ function Videos() {
                   <Modal.Body>
                     <Form>
                       {/* add video title */}
+                      <input
+                        onChange={(e) => setFile(e.target.files[0])}
+                        type="file"
+                        ref={fileRef}
+                        hidden
+                        accept="image/*"
+                      />
+                      <Col xs={6} md={4}>
+                        <Image
+                          onClick={() => fileRef.current.click()}
+                          src="https://blog.doographics.com/uploads/images/202106/image_750x_60be0aa236492.jpg"
+                          thumbnail
+                        />
+                      </Col>
                       <Form.Group
                         // as={Col}
                         className="mb-3"
                         controlId="formPlaintextPassword"
                       >
                         <Form.Label sm="2">Title</Form.Label>
+                        <div sm="10">
+                          <Form.Control
+                            className="modal_input"
+                            type="text"
+                            placeholder=""
+                          />
+                        </div>
+                      </Form.Group>
+                      <Form.Group
+                        // as={Col}
+                        className="mb-3"
+                        controlId="formPlaintextPassword"
+                      >
+                        <Form.Label sm="2">Description</Form.Label>
                         <div sm="10">
                           <Form.Control
                             className="modal_input"
@@ -69,6 +99,27 @@ function Videos() {
                           />
                         </div>
                       </Form.Group>
+                      <Col lg={6} md={4}>
+                        <Form.Group
+                          as={Row}
+                          className="mb-3"
+                          controlId="formPlaintextPassword"
+                        >
+                          <Form.Label sm="2">
+                            Course Start Date(Cochin)
+                          </Form.Label>
+                          <div sm="10">
+                            <Form.Control
+                              className="modal_input"
+                              type="date"
+                              placeholder=""
+                              name="cochin"
+                              value=""
+                              // onChange={handleInputChange}
+                            />
+                          </div>
+                        </Form.Group>
+                      </Col>
                     </Form>
                   </Modal.Body>
                   <Modal.Footer className="footer_button">

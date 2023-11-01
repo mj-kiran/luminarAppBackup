@@ -52,7 +52,7 @@ const Login = () => {
       setTimeout(() => {
         setLoginInProgress(false); 
         setLoginSuccess(true); 
-        navigate("/home");
+        navigate("/courses");
       }, 3000);
     } else {
       setLoginMessage("Login failed. Please check your credentials.");

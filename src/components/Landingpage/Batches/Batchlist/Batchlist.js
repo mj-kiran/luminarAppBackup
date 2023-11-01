@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Batchlist({ item }) {
   return (
     <>
-      <Link to={`batchdetails/${item.id}`}>
+      <Link to={`${item.id}/details`}>
         <Card  className="my-3 p-3 rounded batchlist">
           <Card.Body>
             <Card.Title>

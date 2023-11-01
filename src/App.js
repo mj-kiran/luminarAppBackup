@@ -42,11 +42,11 @@ function App() {
               <>
                 <Header />
                 <Routes>
-                  <Route path="/home" element={<Courses />} />
+                  <Route path="/courses" element={<Courses />} />
 
-                  <Route path="/batches/:id" element={<Batches />} />
+                  <Route path="/courses/:courseId/batches" element={<Batches />} />
                   <Route
-                    path="/batches/:id/batchdetails/:id"
+                    path="/courses/:courseId/batches/:batchId/details"
                     element={<BatchDetails />}
                   >
                     <Route index element={<Overview />} />
